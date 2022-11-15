@@ -1,0 +1,183 @@
+@import url('file') all and (expression);
+
+* {
+    font-family: Arial, Helvetica, sans-serif; /*Thiết lập phông chữ*/
+}
+
+.head1 {
+    color: rgb(140,51,79); 
+}
+.head2 {
+    color: green;
+}
+#para1 {
+    color: #FFA500;
+}
+
+a:link {
+    color: red;
+}
+a:visited {
+    color: green;
+}
+a:hover {
+    color: hotpink;
+}
+a:focus {
+    color: blue;
+}
+a:active {
+    color: darkblue;
+
+    position: value; 
+    
+}
+
+
+table, th, td{
+    border:1px solid #868585;
+}
+table{
+    border-collapse:collapse;
+}
+table tr:nth-child(odd){
+    background-color:#eee;
+}
+table tr:nth-child(even){
+    background-color:white;
+}
+table tr:nth-child(1){
+    background-color:skyblue;
+}
+
+a {
+    display: inline-block;
+    background-color: #eaf1dd;
+    color: #060;
+    text-decoration: none;
+    padding: 6px 4px;
+    margin: 4px;
+    border-right: 2px solid #999999;
+    border-bottom: 2px solid #999999;
+    border-top-width: 0px;
+    border-left-width: 0px;
+}
+a:hover
+{
+    color: #030;
+    border: 1px solid #9999ff;
+}
+
+p#para2 {
+    background-color: blueviolet;
+}
+h1,p {
+    font-size: 30px;
+}
+
+.bg1{
+    border: 1px solid black;
+    width: 250px;
+    height: 300px;
+    background-image: url('img/img2.jfif');
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.bg2{
+    width: 250px;
+    height: 300px;
+    background-image: url('img/img2.jfif');
+    border: 1px solid black;
+    background-repeat: no-repeat;
+    background-position: 10px 50px;
+}
+
+@import 'header';
+@import 'body';
+@import 'footer';
+
+/* Sử dụng from...to */
+@keyframes changecolor { 
+    from {background-color: pink;}
+    to {background-color: red;}
+}
+.color {
+    width:100px; 
+    height:100px;
+    background-color: purple ;
+    animation-name: changecolor; 
+    animation-duration: 4s;
+}
+
+ /* Sử dụng %  */
+@keyframes changeposition {
+    0% {background-color: green; left: 0px; top: 0px;}
+    25% {background-color: yellow; left: 200px; top: 0px;}
+    50% {background-color: pink; left: 200px; top: 200px;}
+    75% {background-color: purple; left: 0px; top: 200px;}
+    100% {background-color: red; left: 0px; top: 0px;}
+}
+.pos {
+    position: relative;
+    width:100px; 
+    height:100px;
+    background-color: purple ;
+    
+    animation: changeposition 4s linear 1s infinite normal none;
+}
+.head1 {
+    transition: background-color 1s ease-in 1s;
+}
+.head1:hover {
+    background-color: green;
+}
+
+/* Áp dụng cho những trình duyệt có chiều rộng =>800px và <= 900px */
+@media ( max-width: 900px) and (min-width: 800px) { 
+    body { font-size: 16px;}
+}
+/* Áp dụng cho màn hình nằm ngang có chiều rộng >= 1200px */
+@media (orientation: landscape) , ( device-min-width: 1200px ) {
+    body {font-size: 14px;}
+}
+/* Áp dụng cho màn hình có tỉ lệ không phải 4/3 */
+@media not (device-aspect-ratio: 4/3) {
+    body {font-size: 13px;}
+}
+
+/* Áp dụng cho những trình duyệt có chiều rộng >= 800px */
+@media (min-width: 800px) {
+    body {font-size: 15px;}
+}
+/* Áp dụng cho những trình duyệt có chiều rộng <= 700px */
+@media (max-width: 700px) {
+    body {font-size: 13px;}
+}
+
+/* Sử dụng đơn vị là dpi: dots per inch  */
+@media (max-resolution: 300dpi) {
+    body {font-size: 15px;}
+}
+/*Sử dụng đơn vị là dpcm: dots per centimeter */
+@media (min-resolution: 600dpcm) {
+    body {font-size: 14px;}
+}
+
+/* Áp dụng khi thiết bị để dọc */
+@media (orientation: portrait) {
+    body {font-size: 14px;}
+}
+/* Áp dụng khi thiết bị để ngang */
+@media (orientation: landscape) {
+    body {font-size: 15px;}
+}
+
+/* Áp dụng cho màn hình màu */
+@media (color) {
+    body {font-size: 14px;}
+}
+/* Áp dụng cho màn hình có ít nhất 256 màu  */
+@media (min-color-index: 256) {
+    body {font-size: 15px;}
+} 
+
